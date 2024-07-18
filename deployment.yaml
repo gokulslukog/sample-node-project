@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodeap
+  labels:
+    app: nodeap
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nodeap
+  template:
+    metadata:
+      labels:
+        app: nodeap
+    spec:
+      containers:
+      - name: nodeap
+        image: lukogs/node1
+        ports:
+        - containerPort: 3005
